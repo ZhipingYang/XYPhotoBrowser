@@ -1,0 +1,16 @@
+PODS:
+  - XYPhotoBrowser (0.1.0)
+
+DEPENDENCIES:
+  - XYPhotoBrowser (from `../`)
+
+EXTERNAL SOURCES:
+  XYPhotoBrowser:
+    :path: ../
+
+SPEC CHECKSUMS:
+  XYPhotoBrowser: 8d1ac7789a3e0d3fde1e19dcdcf52765ce96c059
+
+PODFILE CHECKSUM: 0d11a80a58fb11c1cadcb15a979e13ff77e859ba
+
+COCOAPODS: 1.3.1

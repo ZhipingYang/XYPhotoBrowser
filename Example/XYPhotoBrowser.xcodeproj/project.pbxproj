@@ -20,6 +20,9 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		65DFCC151FE94F3F00C5CB19 /* PhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFCC0F1FE94F3E00C5CB19 /* PhotoItem.m */; };
+		65DFCC161FE94F3F00C5CB19 /* PhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFCC101FE94F3E00C5CB19 /* PhotoManager.m */; };
+		65DFCC171FE94F3F00C5CB19 /* PhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFCC131FE94F3F00C5CB19 /* PhotoDataSource.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		76AC96336E4AA97F64F760D9 /* libPods-XYPhotoBrowser_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F275038EC535DC77FF01FB6 /* libPods-XYPhotoBrowser_Example.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
@@ -36,10 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0CAA42A3CA151338D70C77BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0CAA42A3CA151338D70C77BB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		31F1C6EBDEDB7A8EA63B7FD3 /* Pods_XYPhotoBrowser_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XYPhotoBrowser_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F275038EC535DC77FF01FB6 /* libPods-XYPhotoBrowser_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYPhotoBrowser_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F9E4A297C1857ACD855FB85 /* XYPhotoBrowser.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = XYPhotoBrowser.podspec; path = ../XYPhotoBrowser.podspec; sourceTree = "<group>"; };
+		4F9E4A297C1857ACD855FB85 /* XYPhotoBrowser.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XYPhotoBrowser.podspec; path = ../XYPhotoBrowser.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* XYPhotoBrowser_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYPhotoBrowser_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,9 +62,15 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		65DFCC0F1FE94F3E00C5CB19 /* PhotoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoItem.m; sourceTree = "<group>"; };
+		65DFCC101FE94F3E00C5CB19 /* PhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoManager.m; sourceTree = "<group>"; };
+		65DFCC111FE94F3E00C5CB19 /* PhotoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDataSource.h; sourceTree = "<group>"; };
+		65DFCC121FE94F3F00C5CB19 /* PhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoManager.h; sourceTree = "<group>"; };
+		65DFCC131FE94F3F00C5CB19 /* PhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDataSource.m; sourceTree = "<group>"; };
+		65DFCC141FE94F3F00C5CB19 /* PhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoItem.h; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9257804E297C6BD898F9D741 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		9257804E297C6BD898F9D741 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D194C5F1148268296A81A44A /* Pods-XYPhotoBrowser_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYPhotoBrowser_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYPhotoBrowser_Example/Pods-XYPhotoBrowser_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FF367DE0AE20BABD89ED6AC5 /* Pods-XYPhotoBrowser_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYPhotoBrowser_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYPhotoBrowser_Example/Pods-XYPhotoBrowser_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +148,12 @@
 			children = (
 				6003F59C195388D20070C39A /* XYAppDelegate.h */,
 				6003F59D195388D20070C39A /* XYAppDelegate.m */,
+				65DFCC111FE94F3E00C5CB19 /* PhotoDataSource.h */,
+				65DFCC131FE94F3F00C5CB19 /* PhotoDataSource.m */,
+				65DFCC141FE94F3F00C5CB19 /* PhotoItem.h */,
+				65DFCC0F1FE94F3E00C5CB19 /* PhotoItem.m */,
+				65DFCC121FE94F3F00C5CB19 /* PhotoManager.h */,
+				65DFCC101FE94F3E00C5CB19 /* PhotoManager.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* XYViewController.h */,
 				6003F5A6195388D20070C39A /* XYViewController.m */,
@@ -241,6 +256,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = zhipingyang;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -348,7 +366,10 @@
 			files = (
 				6003F59E195388D20070C39A /* XYAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* XYViewController.m in Sources */,
+				65DFCC161FE94F3F00C5CB19 /* PhotoManager.m in Sources */,
+				65DFCC171FE94F3F00C5CB19 /* PhotoDataSource.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				65DFCC151FE94F3F00C5CB19 /* PhotoItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,12 +497,17 @@
 			baseConfigurationReference = FF367DE0AE20BABD89ED6AC5 /* Pods-XYPhotoBrowser_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Peng Wang (PDX44H9Z79)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XYPhotoBrowser/XYPhotoBrowser-Prefix.pch";
 				INFOPLIST_FILE = "XYPhotoBrowser/XYPhotoBrowser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "chelun any app";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -491,12 +517,17 @@
 			baseConfigurationReference = D194C5F1148268296A81A44A /* Pods-XYPhotoBrowser_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Peng Wang (PDX44H9Z79)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XYPhotoBrowser/XYPhotoBrowser-Prefix.pch";
 				INFOPLIST_FILE = "XYPhotoBrowser/XYPhotoBrowser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "chelun any app";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

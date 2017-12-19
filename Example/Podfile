@@ -9,6 +9,7 @@ target 'XYPhotoBrowser_Example' do
 	
 	pod 'FLAnimatedImage', '~> 1.0'
 	pod 'SDWebImage'
+	pod 'MBProgressHUD'
 	
 end
 

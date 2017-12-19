@@ -1,0 +1,1 @@
+../../../../../XYPhotoBrowser/Classes/model/CKPBSinglePhotoDataSource.h

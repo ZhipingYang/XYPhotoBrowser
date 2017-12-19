@@ -1,0 +1,1 @@
+../../../../../XYPhotoBrowser/Classes/constant/CLPhotoBrowserKit.h

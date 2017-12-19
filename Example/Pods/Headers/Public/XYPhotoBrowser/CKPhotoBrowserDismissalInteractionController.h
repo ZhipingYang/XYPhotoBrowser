@@ -1,0 +1,1 @@
+../../../../../XYPhotoBrowser/Classes/controller/CKPhotoBrowserDismissalInteractionController.h

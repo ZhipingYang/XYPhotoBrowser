@@ -1,0 +1,1 @@
+../../../../../XYPhotoBrowser/Classes/category/CKPhotoBrowserCategory.h

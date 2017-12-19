@@ -1,0 +1,1 @@
+../../../../../XYPhotoBrowser/Classes/view/CKPBScalingImageView.h

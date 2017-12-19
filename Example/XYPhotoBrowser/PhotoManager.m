@@ -11,7 +11,10 @@
 #import "PhotoDataSource.h"
 #import "CKPhotoBrowserController.h"
 #import "CKPBFunctionView.h"
+#import <XYPhotoBrowser/CKPhotoBrowserCategory.h>
 #import <UIImage+GIF.h>
+#import <SDWebImageManager.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface PhotoManager()<CKPhotoBrowserControllerDelegate, PhotoDataSourceDelegate, CKPBFunctionViewDelegate>
 
@@ -49,7 +52,7 @@
 	manger.photosViewController = [[CKPhotoBrowserController alloc] initWithDataSource:manger.photoDataSource initialPhoto:[manger.photoDataSource photoAtIndex:0] delegate:manger];
 	manger.photosViewController.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:manger action:@selector(dismissPhotosController)];
 	manger.photosViewController.delegate = manger;
-//	[[UIApplication sharedApplication].topViewController presentViewController:manger.photosViewController animated:YES completion:nil];
+	[[UIApplication sharedApplication].ckpb_topViewController presentViewController:manger.photosViewController animated:YES completion:nil];
 }
 
 - (void)dismissPhotosController
@@ -59,70 +62,26 @@
 
 - (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(id)contextInfo
 {
-	[[CKUIManager sharedManager] showMessageHUDInWindow:image ? @"保存成功":(error.localizedDescription ?: @"保存失败")];
+//	[[CKUIManager sharedManager] showMessageHUDInWindow:image ? @"保存成功":(error.localizedDescription ?: @"保存失败")];
 }
 
 - (void)sharePhoto:(id<CKPhotoBrowserItem>)photo
 {
-	NSArray *shareActions = [self getShareActionsWithImage:photo.image ?: [UIImage imageWithData:photo.imageData]];
-	NSArray *toolActions = [self getToolActionsWithImage:photo.image ?: [UIImage imageWithData:photo.imageData]];
-	CKShareController *controller = [CKShareController shareControllerWithShareActions:shareActions toolActions:toolActions];
-	controller.title = @"分享到";
-	[[UIApplication sharedApplication].topViewController presentViewController:controller animated:YES completion:nil];
+//	NSArray *shareActions = [self getShareActionsWithImage:photo.image ?: [UIImage imageWithData:photo.imageData]];
+//	NSArray *toolActions = [self getToolActionsWithImage:photo.image ?: [UIImage imageWithData:photo.imageData]];
+//	CKShareController *controller = [CKShareController shareControllerWithShareActions:shareActions toolActions:toolActions];
+//	controller.title = @"分享到";
+//	[[UIApplication sharedApplication].topViewController presentViewController:controller animated:YES completion:nil];
 }
-
-- (NSArray <CKShareAction *> *)getShareActionsWithImage:(UIImage *)image
-{
-	NSMutableArray *shareActions = [NSMutableArray array];
-	
-	CKShareAction *wexinHyAction = [CKShareAction actionWithType:CKShareActionTypeWXHy handler:^(CKShareAction *action) {
-//		[self executeShareAction:action image:image];
-	}];
-	[shareActions addObject:wexinHyAction];
-	
-	CKShareAction *wexinPyqAction = [CKShareAction actionWithType:CKShareActionTypeWXPyq handler:^(CKShareAction *action) {
-//		[self executeShareAction:action image:image];
-	}];
-	[shareActions addObject:wexinPyqAction];
-	
-	CKShareAction *qqAction = [CKShareAction actionWithType:CKShareActionTypeQQ handler:^(CKShareAction *action) {
-//		[self executeShareAction:action image:image];
-	}];
-	[shareActions addObject:qqAction];
-	
-	CKShareAction *sinaAction = [CKShareAction actionWithType:CKShareActionTypeSina handler:^(CKShareAction *action) {
-//		[self executeShareAction:action image:image];
-	}];
-	[shareActions addObject:sinaAction];
-	
-	return shareActions;
-}
-
-- (NSArray <CKShareAction *> *)getToolActionsWithImage:(UIImage *)image
-{
-	NSMutableArray *toolActions = [NSMutableArray array];
-	
-	if (image) {
-		CKShareAction *downloadImageAction = [CKShareAction actionWithType:CKShareActionTypeDownloadImage handler:^(CKShareAction *action) {
-//			[self executeShareAction:action image:image];
-		}];
-		[toolActions addObject:downloadImageAction];
-	} else {
-		CKShareAction *copyLinkAction = [CKShareAction actionWithType:CKShareActionTypeCopyLink handler:^(CKShareAction *action) {
-//			[self executeShareAction:action image:image];
-		}];
-		[toolActions addObject:copyLinkAction];
-	}
-	
-	return toolActions;
-}
-
 
 #pragma mark - CKPhotoBrowserControllerDelegate
 
 - (void)photosViewController:(CKPhotoBrowserController *)photosViewController didNavigateToPhoto:(id <CKPhotoBrowserItem>)photo atIndex:(NSUInteger)photoIndex
 {
-	if (![NSObject checkIsEmpty:photo.imageUrl] && photo.imageData==nil && photo.image==nil) {
+	[(PhotoItem *)[_photoDataSource photoAtIndex:photoIndex+1] loadImageIfNeed];
+	[(PhotoItem *)[_photoDataSource photoAtIndex:photoIndex-1] loadImageIfNeed];
+	
+	if (photo.imageUrl.length>0 && photo.imageData==nil && photo.image==nil) {
 		[[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:photo.imageUrl] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
 			if ([image isGIF]) {
 				[(PhotoItem *)photo updateImageData:data];
@@ -189,7 +148,7 @@
 		[alert addAction:[UIAlertAction actionWithTitle:@"分享" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 			[self sharePhoto:photo];
 		}]];
-		[[UIApplication sharedApplication].topViewController presentViewController:alert animated:YES completion:nil];
+		[[UIApplication sharedApplication].ckpb_topViewController presentViewController:alert animated:YES completion:nil];
 	}
 	
 	return YES;
@@ -198,11 +157,12 @@
 - (BOOL)photosViewController:(CKPhotoBrowserController *)photosViewController handleSingleTapForPhoto:(id<CKPhotoBrowserItem>)photo withGestureRecognizer:(UITapGestureRecognizer *)tapGestureRecognizer
 {
 	if (photo.type == CKWebPhotoTypeAd) {
-		CKViewController *vc = [CKViewController new];
+		UIViewController *vc = [UIViewController new];
+		vc.view.backgroundColor = [UIColor redColor];
 		vc.title = @"这是一个广告页面";
-		vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:vc action:@selector(backAction)];
+		vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:vc action:@selector(dismissModalViewControllerAnimated:)];
 		UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-		[[UIApplication sharedApplication].topViewController presentViewController:nav animated:YES completion:nil];
+		[[UIApplication sharedApplication].ckpb_topViewController presentViewController:nav animated:YES completion:nil];
 	}
 	return photo.type == CKWebPhotoTypeDefault;
 }
@@ -210,7 +170,7 @@
 - (void)photosViewController:(CKPhotoBrowserController *)photosViewController actionCompletedWithActivityType:(NSString *)activityType
 {
 	if ([activityType isEqualToString:@"com.apple.UIKit.activity.SaveToCameraRoll"]) {
-		[[CKUIManager sharedManager] showSuccessHUDHintInWindow:@"保存成功"];
+//		[[CKUIManager sharedManager] showSuccessHUDHintInWindow:@"保存成功"];
 	}
 }
 
@@ -225,13 +185,13 @@
 
 - (void)photoDataSourceStartLoading
 {
-	[[CKUIManager sharedManager] showLoadingHUDMessageInWindow:@""];
+//	[[CKUIManager sharedManager] showLoadingHUDMessageInWindow:@""];
 }
 
 - (void)photoDataSourceLoadingSuccess:(BOOL)sucess
 {
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		[[CKUIManager sharedManager] stopLoadingHUD];
+//		[[CKUIManager sharedManager] stopLoadingHUD];
 	});
 	if (sucess) {
 		[_photosViewController reloadPhotosAnimated:NO];
@@ -247,11 +207,11 @@
 
 - (void)functionView:(CKPBFunctionView *)view commentViewDidClick:(UIButton *)commentView
 {
-	CKViewController *vc = [CKViewController new];
+	UIViewController *vc = [UIViewController new];
 	vc.title = @"评论列表";
-	vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:vc action:@selector(backAction)];
+	vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:vc action:@selector(dismissModalViewControllerAnimated:)];
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-	[[UIApplication sharedApplication].topViewController presentViewController:nav animated:YES completion:nil];
+	[[UIApplication sharedApplication].ckpb_topViewController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)functionView:(CKPBFunctionView *)view starViewDidClick:(UIButton *)starView
@@ -266,3 +226,8 @@
 
 
 @end
+
+
+
+
+

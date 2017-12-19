@@ -60,6 +60,9 @@
 
 - (id<CKPhotoBrowserItem>)photoAtIndex:(NSInteger)photoIndex
 {
+	if (photoIndex >= _items.count) {
+		return nil;
+	}
 	return [_items objectAtIndex:photoIndex];
 }
 

@@ -8,6 +8,7 @@
 
 #import "PhotoItem.h"
 #import <SDWebImageManager.h>
+#import <SDWebImage/UIImage+GIF.h>
 
 @interface PhotoItem()
 
@@ -165,6 +166,22 @@
 {
 	_imageData = imageData;
 }
+
+- (void)loadImageIfNeed
+{
+	if (_imageUrl.length<=0 || _image || _imageData || _type==CKWebPhotoTypeMore) {
+		return;
+	}
+	typeof(self) weakSelf = self;
+	[[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:_imageUrl] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+		if ([image isGIF]) {
+			weakSelf.imageData = data;
+		} else if (image) {
+			weakSelf.image = image;
+		}
+	}];
+}
+
 @end
 
 

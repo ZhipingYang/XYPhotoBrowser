@@ -54,5 +54,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIApplication (CKPhotoBrowserCategory)
+
+- (UIViewController *)ckpb_topViewController;
+
+@end
 
 NS_ASSUME_NONNULL_END

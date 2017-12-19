@@ -23,6 +23,9 @@
 		65DFCC151FE94F3F00C5CB19 /* PhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFCC0F1FE94F3E00C5CB19 /* PhotoItem.m */; };
 		65DFCC161FE94F3F00C5CB19 /* PhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFCC101FE94F3E00C5CB19 /* PhotoManager.m */; };
 		65DFCC171FE94F3F00C5CB19 /* PhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFCC131FE94F3F00C5CB19 /* PhotoDataSource.m */; };
+		65DFCC1A1FE9551600C5CB19 /* gif1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 65DFCC181FE9551500C5CB19 /* gif1.gif */; };
+		65DFCC1B1FE9551600C5CB19 /* gif0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 65DFCC191FE9551500C5CB19 /* gif0.gif */; };
+		65F8B0181FE95B2700DDD972 /* CKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65F8B0171FE95B2700DDD972 /* CKPhotoBrowser.bundle */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		76AC96336E4AA97F64F760D9 /* libPods-XYPhotoBrowser_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F275038EC535DC77FF01FB6 /* libPods-XYPhotoBrowser_Example.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
@@ -68,6 +71,9 @@
 		65DFCC121FE94F3F00C5CB19 /* PhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoManager.h; sourceTree = "<group>"; };
 		65DFCC131FE94F3F00C5CB19 /* PhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDataSource.m; sourceTree = "<group>"; };
 		65DFCC141FE94F3F00C5CB19 /* PhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoItem.h; sourceTree = "<group>"; };
+		65DFCC181FE9551500C5CB19 /* gif1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif1.gif; sourceTree = "<group>"; };
+		65DFCC191FE9551500C5CB19 /* gif0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif0.gif; sourceTree = "<group>"; };
+		65F8B0171FE95B2700DDD972 /* CKPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CKPhotoBrowser.bundle; path = ../../../../../GItLab/Pod/CLPhotoBrowserKit/CLPhotoBrowserClass/constant/CKPhotoBrowser.bundle; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9257804E297C6BD898F9D741 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 				6003F5A5195388D20070C39A /* XYViewController.h */,
 				6003F5A6195388D20070C39A /* XYViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				65DFCC191FE9551500C5CB19 /* gif0.gif */,
+				65DFCC181FE9551500C5CB19 /* gif1.gif */,
+				65F8B0171FE95B2700DDD972 /* CKPhotoBrowser.bundle */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -289,8 +298,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				65F8B0181FE95B2700DDD972 /* CKPhotoBrowser.bundle in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				65DFCC1A1FE9551600C5CB19 /* gif1.gif in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				65DFCC1B1FE9551600C5CB19 /* gif0.gif in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

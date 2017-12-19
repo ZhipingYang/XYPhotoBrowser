@@ -167,3 +167,22 @@
 
 @end
 
+@implementation UIApplication (BPAdditions)
+
+- (UIViewController *)ckpb_topViewController
+{
+	UIViewController *rootController = [[[UIApplication sharedApplication].delegate window] rootViewController];
+	
+	while (rootController.presentedViewController!=nil || [rootController isKindOfClass:[UINavigationController class]]) {
+		if (rootController.presentedViewController!=nil) {
+			rootController = rootController.presentedViewController;
+		}
+		if ([rootController isKindOfClass:[UINavigationController class]]) {
+			rootController = [[(UINavigationController *)rootController viewControllers] lastObject];
+		}
+	}
+	return rootController;
+}
+
+@end
+

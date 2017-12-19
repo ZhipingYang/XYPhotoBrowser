@@ -21,4 +21,6 @@
 - (void)updateImage:(UIImage *)image;
 - (void)updateImageData:(NSData *)imageData;
 
+- (void)loadImageIfNeed;
+
 @end

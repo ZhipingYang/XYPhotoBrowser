@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/XYPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/XYPhotoBrowser)
 [![Platform](https://img.shields.io/cocoapods/p/XYPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/XYPhotoBrowser)
 
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

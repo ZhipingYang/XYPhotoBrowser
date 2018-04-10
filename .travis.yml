@@ -1,14 +1,35 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
+# osx_image: xcode8.1
+# language: objective-c
+# sudo: required
 
-osx_image: xcode9.2
+# cache:
+#     - bundler
+#     - cocoapods
+
+# before_install:
+#     - bundle install
+#     - bundle exec danger
+
+# env:
+#     global:
+#     - LANG=en_US.UTF-8
+
+#     - WORKSPACE="Example/FORScrollViewEmptyAssistant.xcworkspace"
+#     - IOS_SCHEME="FORScrollViewEmptyAssistant_Example"
+#     - IOS_SDK="iphonesimulator10.0"
+
+#     matrix:
+#     - DESTINATION="OS=10.1,name=iPhone 7" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+
+# script:
+#     - xcodebuild clean build test -scheme "$SCHEME" -workspace "$WORKSPACE" SDK="$IOS_SDK" -destination "$DESTINATION" -configuration Debug GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 language: objective-c
-cache: cocoapods
+osx_image: xcode8.0
 podfile: Demo/Podfile
-before_install:
-- gem install cocoapods # Since Travis is not always on latest version
-- pod install --project-directory=Demo
-script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Demo/XYPhotoBrowserDemo.xcworkspace -scheme XYPhotoBrowserDemo -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
-- pod lib lint
+# before_install:
+#     - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+#     - pod install
+before_script:
+- export LANG=en_US.UTF-8
+xcode_workspace: Demo/XYPhotoBrowserDemo.xcworkspace
+

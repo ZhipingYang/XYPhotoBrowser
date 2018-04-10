@@ -1,1 +1,0 @@
-../../../../../XYPhotoBrowser/Classes/controller/CKPhotoBrowserChildController.h

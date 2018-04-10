@@ -28,18 +28,19 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/zhipingyang/XYPhotoBrowser.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.platform     = :ios, '8.0'
-
   s.ios.deployment_target = '8.0'
+  s.requires_arc = true
 
-  s.source_files = 'XYPhotoBrowser/Classes/**/*'
+  s.source_files = [
+   "CLPhotoBrowserClass/**/*.{h,m}",
+  ]
+  s.public_header_files = [
+  "CLPhotoBrowserClass/**/*.h",
+  ]
+  s.resources = [
+  "CLPhotoBrowserClass/constant/*.bundle"
+  ]
   
-  s.resource_bundles = {
-    'XYPhotoBrowser' => ['XYPhotoBrowser/Assets/*.png']
-  }
-
-  s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit'
-  s.dependency 'FLAnimatedImage'
-  s.dependency 'SDWebImage'
+  s.frameworks = 'UIKit', 'Photos', 'AVFoundation', 'AssetsLibrary', 'AVKit'
 
 end

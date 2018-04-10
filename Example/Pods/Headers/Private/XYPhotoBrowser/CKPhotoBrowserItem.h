@@ -1,1 +1,0 @@
-../../../../../XYPhotoBrowser/Classes/constant/CKPhotoBrowserItem.h

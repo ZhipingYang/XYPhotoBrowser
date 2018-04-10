@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+
+platform :ios, ‘8.0’
+
+source 'http://gitlab.chelun.com/ios/Specs.git'
+source 'http://gitlab.chelun.com/CocoaPods/Specs.git'
+
+target 'CLPhotoBrowserKitDemo' do
+
+  pod 'FLAnimatedImage'
+  pod 'MBProgressHUD'
+  pod 'SDWebImage'
+  pod 'UUKeyboardInputView'
+  
+end

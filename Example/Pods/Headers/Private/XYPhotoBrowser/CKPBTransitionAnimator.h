@@ -1,1 +1,0 @@
-../../../../../XYPhotoBrowser/Classes/model/CKPBTransitionAnimator.h

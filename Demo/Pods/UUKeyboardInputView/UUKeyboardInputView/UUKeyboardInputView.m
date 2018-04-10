@@ -151,8 +151,6 @@
 - (void)dismiss
 {
     [self.inputView resignFirstResponder];
-	UIWindow *window = [UIApplication sharedApplication].delegate.window;
-	[window endEditing:YES];
     [self.assistDismissButton removeFromSuperview];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

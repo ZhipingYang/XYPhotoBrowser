@@ -32,13 +32,13 @@ TODO: Add long description of the pod here.
   s.requires_arc = true
 
   s.source_files = [
-   "CLPhotoBrowserClass/**/*.{h,m}",
+   "XYPhotoBrowserClass/**/*.{h,m}",
   ]
   s.public_header_files = [
-  "CLPhotoBrowserClass/**/*.h",
+  "XYPhotoBrowserClass/**/*.h",
   ]
   s.resources = [
-  "CLPhotoBrowserClass/constant/*.bundle"
+  "XYPhotoBrowserClass/constant/*.bundle"
   ]
   
   s.frameworks = 'UIKit', 'Photos', 'AVFoundation', 'AssetsLibrary', 'AVKit'

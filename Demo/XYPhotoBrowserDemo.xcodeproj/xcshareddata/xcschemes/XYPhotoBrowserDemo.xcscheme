@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "651ACCCC1FC6C0D800816E2D"
-               BuildableName = "CLPhotoBrowserKitDemo.app"
-               BlueprintName = "CLPhotoBrowserKitDemo"
-               ReferencedContainer = "container:XYPhotoBrowserKitDemo.xcodeproj">
+               BuildableName = "XYPhotoBrowserDemo.app"
+               BlueprintName = "XYPhotoBrowserDemo"
+               ReferencedContainer = "container:XYPhotoBrowserDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "651ACCCC1FC6C0D800816E2D"
-            BuildableName = "CLPhotoBrowserKitDemo.app"
-            BlueprintName = "CLPhotoBrowserKitDemo"
-            ReferencedContainer = "container:XYPhotoBrowserKitDemo.xcodeproj">
+            BuildableName = "XYPhotoBrowserDemo.app"
+            BlueprintName = "XYPhotoBrowserDemo"
+            ReferencedContainer = "container:XYPhotoBrowserDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "651ACCCC1FC6C0D800816E2D"
-            BuildableName = "CLPhotoBrowserKitDemo.app"
-            BlueprintName = "CLPhotoBrowserKitDemo"
-            ReferencedContainer = "container:XYPhotoBrowserKitDemo.xcodeproj">
+            BuildableName = "XYPhotoBrowserDemo.app"
+            BlueprintName = "XYPhotoBrowserDemo"
+            ReferencedContainer = "container:XYPhotoBrowserDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "651ACCCC1FC6C0D800816E2D"
-            BuildableName = "CLPhotoBrowserKitDemo.app"
-            BlueprintName = "CLPhotoBrowserKitDemo"
-            ReferencedContainer = "container:XYPhotoBrowserKitDemo.xcodeproj">
+            BuildableName = "XYPhotoBrowserDemo.app"
+            BlueprintName = "XYPhotoBrowserDemo"
+            ReferencedContainer = "container:XYPhotoBrowserDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

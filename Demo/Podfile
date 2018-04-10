@@ -2,10 +2,7 @@
 
 platform :ios, ‘8.0’
 
-source 'http://gitlab.chelun.com/ios/Specs.git'
-source 'http://gitlab.chelun.com/CocoaPods/Specs.git'
-
-target 'CLPhotoBrowserKitDemo' do
+target 'XYPhotoBrowserDemo' do
 
   pod 'FLAnimatedImage'
   pod 'MBProgressHUD'

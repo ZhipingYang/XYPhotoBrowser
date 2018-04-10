@@ -1,6 +1,6 @@
 //
 //  PhotoDataSource.h
-//  CLWebImageBrowserDemo
+//  XYImageBrowserDemo
 //
 //  Created by XcodeYang on 08/11/2017.
 //  Copyright © 2017 XcodeYang. All rights reserved.

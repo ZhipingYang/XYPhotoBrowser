@@ -1,6 +1,6 @@
 //
 //  XYPhotoBrowserCategory.m
-//  CLPhotoBrowser
+//  XYPhotoBrowser
 //
 //  Created by XcodeYang on 08/11/2017.
 //  Copyright © 2017 XcodeYang. All rights reserved.
@@ -23,7 +23,7 @@
 	return self.frame.origin.x;
 }
 
-- (void)setxypb_left:(CGFloat)xypb_left
+- (void)setXypb_left:(CGFloat)xypb_left
 {
 	CGRect frame = self.frame;
 	frame.origin.x = xypb_left;
@@ -34,7 +34,7 @@
 	return self.frame.origin.y;
 }
 
-- (void)setxypb_top:(CGFloat)xypb_top
+- (void)setXypb_top:(CGFloat)xypb_top
 {
 	CGRect frame = self.frame;
 	frame.origin.y = xypb_top;
@@ -45,7 +45,7 @@
 	return self.frame.origin.x + self.frame.size.width;
 }
 
-- (void)setxypb_right:(CGFloat)xypb_right
+- (void)setXypb_right:(CGFloat)xypb_right
 {
 	CGRect frame = self.frame;
 	frame.origin.x = xypb_right - frame.size.width;
@@ -56,7 +56,7 @@
 	return self.frame.origin.y + self.frame.size.height;
 }
 
-- (void)setxypb_bottom:(CGFloat)xypb_bottom
+- (void)setXypb_bottom:(CGFloat)xypb_bottom
 {
 	CGRect frame = self.frame;
 	frame.origin.y = xypb_bottom - frame.size.height;
@@ -67,7 +67,7 @@
 	return self.frame.size.width;
 }
 
-- (void)setxypb_width:(CGFloat)xypb_width
+- (void)setXypb_width:(CGFloat)xypb_width
 {
 	CGRect frame = self.frame;
 	frame.size.width = xypb_width;
@@ -78,7 +78,7 @@
 	return self.frame.size.height;
 }
 
-- (void)setxypb_height:(CGFloat)xypb_height
+- (void)setXypb_height:(CGFloat)xypb_height
 {
 	CGRect frame = self.frame;
 	frame.size.height = xypb_height;
@@ -90,7 +90,7 @@
 	return self.center.x;
 }
 
-- (void)setxypb_centerX:(CGFloat)xypb_centerX
+- (void)setXypb_centerX:(CGFloat)xypb_centerX
 {
 	CGPoint center = self.center;
 	center.x = xypb_centerX;
@@ -102,7 +102,7 @@
 	return self.center.y;
 }
 
-- (void)setxypb_centerY:(CGFloat)xypb_centerY
+- (void)setXypb_centerY:(CGFloat)xypb_centerY
 {
 	CGPoint center = self.center;
 	center.y = xypb_centerY;

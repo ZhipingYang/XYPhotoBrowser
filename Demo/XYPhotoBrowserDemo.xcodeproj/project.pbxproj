@@ -37,14 +37,15 @@
 		65E245AD207CDEB500DDABC2 /* XYPBControllerOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E245A0207CDEB400DDABC2 /* XYPBControllerOverlayView.m */; };
 		65E245AE207CDEB500DDABC2 /* XYPBDefaultCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E245A1207CDEB400DDABC2 /* XYPBDefaultCaptionView.m */; };
 		65E245B0207CDED300DDABC2 /* XYPhotoBrowser.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 65E245AF207CDED200DDABC2 /* XYPhotoBrowser.podspec */; };
-		A44353521F896E77F42C27B5 /* libPods-CLPhotoBrowserKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4FC694581736E78FA0CDED /* libPods-CLPhotoBrowserKitDemo.a */; };
+		CDDF1D36E4F247C25CD937B7 /* libPods-XYPhotoBrowserDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD32C175ABB4A0FFE8D9A713 /* libPods-XYPhotoBrowserDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		138E859CAA2DC8984BAFB3AF /* Pods-CLPhotoBrowserKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPhotoBrowserKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLPhotoBrowserKitDemo/Pods-CLPhotoBrowserKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		13B741C8BD884B676A402066 /* Pods-XYPhotoBrowserDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYPhotoBrowserDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYPhotoBrowserDemo/Pods-XYPhotoBrowserDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		503866C7DB406FAA2DDC533E /* Pods-CLPhotoBrowserKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPhotoBrowserKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLPhotoBrowserKitDemo/Pods-CLPhotoBrowserKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4FC694581736E78FA0CDED /* libPods-CLPhotoBrowserKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLPhotoBrowserKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		651ACCCD1FC6C0D800816E2D /* CLPhotoBrowserKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLPhotoBrowserKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		651ACCCD1FC6C0D800816E2D /* XYPhotoBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYPhotoBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		651ACCD01FC6C0D800816E2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		651ACCD11FC6C0D800816E2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		651ACCD31FC6C0D800816E2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -101,6 +102,8 @@
 		65E245A0207CDEB400DDABC2 /* XYPBControllerOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPBControllerOverlayView.m; sourceTree = "<group>"; };
 		65E245A1207CDEB400DDABC2 /* XYPBDefaultCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPBDefaultCaptionView.m; sourceTree = "<group>"; };
 		65E245AF207CDED200DDABC2 /* XYPhotoBrowser.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; name = XYPhotoBrowser.podspec; path = ../XYPhotoBrowser.podspec; sourceTree = "<group>"; };
+		772A6647AC853C38E1F3C8C6 /* Pods-XYPhotoBrowserDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYPhotoBrowserDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XYPhotoBrowserDemo/Pods-XYPhotoBrowserDemo.release.xcconfig"; sourceTree = "<group>"; };
+		DD32C175ABB4A0FFE8D9A713 /* libPods-XYPhotoBrowserDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYPhotoBrowserDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A44353521F896E77F42C27B5 /* libPods-CLPhotoBrowserKitDemo.a in Frameworks */,
+				CDDF1D36E4F247C25CD937B7 /* libPods-XYPhotoBrowserDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +123,8 @@
 			children = (
 				503866C7DB406FAA2DDC533E /* Pods-CLPhotoBrowserKitDemo.debug.xcconfig */,
 				138E859CAA2DC8984BAFB3AF /* Pods-CLPhotoBrowserKitDemo.release.xcconfig */,
+				13B741C8BD884B676A402066 /* Pods-XYPhotoBrowserDemo.debug.xcconfig */,
+				772A6647AC853C38E1F3C8C6 /* Pods-XYPhotoBrowserDemo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4FC694581736E78FA0CDED /* libPods-CLPhotoBrowserKitDemo.a */,
+				DD32C175ABB4A0FFE8D9A713 /* libPods-XYPhotoBrowserDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,7 +143,7 @@
 			children = (
 				65E245AF207CDED200DDABC2 /* XYPhotoBrowser.podspec */,
 				65E24557207CD6F100DDABC2 /* README.md */,
-				651ACCCF1FC6C0D800816E2D /* CLPhotoBrowserKitDemo */,
+				651ACCCF1FC6C0D800816E2D /* XYPhotoBrowserDemo */,
 				651ACCCE1FC6C0D800816E2D /* Products */,
 				5941C752B4323A368BD88B27 /* Pods */,
 				60766A5D074ACE1328B999D6 /* Frameworks */,
@@ -147,12 +153,12 @@
 		651ACCCE1FC6C0D800816E2D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				651ACCCD1FC6C0D800816E2D /* CLPhotoBrowserKitDemo.app */,
+				651ACCCD1FC6C0D800816E2D /* XYPhotoBrowserDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		651ACCCF1FC6C0D800816E2D /* CLPhotoBrowserKitDemo */ = {
+		651ACCCF1FC6C0D800816E2D /* XYPhotoBrowserDemo */ = {
 			isa = PBXGroup;
 			children = (
 				65E2457D207CDEB400DDABC2 /* XYPhotoBrowser */,
@@ -180,7 +186,7 @@
 				651ACCDE1FC6C0D800816E2D /* Info.plist */,
 				651ACCDF1FC6C0D800816E2D /* main.m */,
 			);
-			path = CLPhotoBrowserKitDemo;
+			path = XYPhotoBrowserDemo;
 			sourceTree = "<group>";
 		};
 		65E2457D207CDEB400DDABC2 /* XYPhotoBrowser */ = {
@@ -265,24 +271,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		651ACCCC1FC6C0D800816E2D /* CLPhotoBrowserKitDemo */ = {
+		651ACCCC1FC6C0D800816E2D /* XYPhotoBrowserDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 651ACCE31FC6C0D800816E2D /* Build configuration list for PBXNativeTarget "CLPhotoBrowserKitDemo" */;
+			buildConfigurationList = 651ACCE31FC6C0D800816E2D /* Build configuration list for PBXNativeTarget "XYPhotoBrowserDemo" */;
 			buildPhases = (
 				0AFC660E3D98CFD6CFD8B9F0 /* [CP] Check Pods Manifest.lock */,
 				651ACCC91FC6C0D800816E2D /* Sources */,
 				651ACCCA1FC6C0D800816E2D /* Frameworks */,
 				651ACCCB1FC6C0D800816E2D /* Resources */,
-				5253CC2FF2CBF00B93B829F7 /* [CP] Embed Pods Frameworks */,
-				1C8FA15E3BCE149FB746DC64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CLPhotoBrowserKitDemo;
+			name = XYPhotoBrowserDemo;
 			productName = CLPhotoBrowserKitDemo;
-			productReference = 651ACCCD1FC6C0D800816E2D /* CLPhotoBrowserKitDemo.app */;
+			productReference = 651ACCCD1FC6C0D800816E2D /* XYPhotoBrowserDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -300,7 +304,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 651ACCC81FC6C0D800816E2D /* Build configuration list for PBXProject "XYPhotoBrowserKitDemo" */;
+			buildConfigurationList = 651ACCC81FC6C0D800816E2D /* Build configuration list for PBXProject "XYPhotoBrowserDemo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -313,7 +317,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				651ACCCC1FC6C0D800816E2D /* CLPhotoBrowserKitDemo */,
+				651ACCCC1FC6C0D800816E2D /* XYPhotoBrowserDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -350,44 +354,11 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CLPhotoBrowserKitDemo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-XYPhotoBrowserDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1C8FA15E3BCE149FB746DC64 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CLPhotoBrowserKitDemo/Pods-CLPhotoBrowserKitDemo-resources.sh",
-				"${PODS_ROOT}/BPCommonUtil/BPCommonUtil/Resources/BPCommonUtil.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLPhotoBrowserKitDemo/Pods-CLPhotoBrowserKitDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5253CC2FF2CBF00B93B829F7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CLPhotoBrowserKitDemo/Pods-CLPhotoBrowserKitDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -548,17 +519,17 @@
 		};
 		651ACCE41FC6C0D800816E2D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 503866C7DB406FAA2DDC533E /* Pods-CLPhotoBrowserKitDemo.debug.xcconfig */;
+			baseConfigurationReference = 13B741C8BD884B676A402066 /* Pods-XYPhotoBrowserDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Peng Wang (PDX44H9Z79)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = CLPhotoBrowserKitDemo/Info.plist;
+				INFOPLIST_FILE = XYPhotoBrowserDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Daniel.CLPhotoBrowserKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = Daniel.XYPhotoBrowserDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5d1662c7-df9b-4243-81c4-0f7ff4a46f00";
 				PROVISIONING_PROFILE_SPECIFIER = "chelun any app";
@@ -568,17 +539,17 @@
 		};
 		651ACCE51FC6C0D800816E2D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 138E859CAA2DC8984BAFB3AF /* Pods-CLPhotoBrowserKitDemo.release.xcconfig */;
+			baseConfigurationReference = 772A6647AC853C38E1F3C8C6 /* Pods-XYPhotoBrowserDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Peng Wang (PDX44H9Z79)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = CLPhotoBrowserKitDemo/Info.plist;
+				INFOPLIST_FILE = XYPhotoBrowserDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Daniel.CLPhotoBrowserKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = Daniel.XYPhotoBrowserDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5d1662c7-df9b-4243-81c4-0f7ff4a46f00";
 				PROVISIONING_PROFILE_SPECIFIER = "chelun any app";
@@ -589,7 +560,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		651ACCC81FC6C0D800816E2D /* Build configuration list for PBXProject "XYPhotoBrowserKitDemo" */ = {
+		651ACCC81FC6C0D800816E2D /* Build configuration list for PBXProject "XYPhotoBrowserDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				651ACCE11FC6C0D800816E2D /* Debug */,
@@ -598,7 +569,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		651ACCE31FC6C0D800816E2D /* Build configuration list for PBXNativeTarget "CLPhotoBrowserKitDemo" */ = {
+		651ACCE31FC6C0D800816E2D /* Build configuration list for PBXNativeTarget "XYPhotoBrowserDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				651ACCE41FC6C0D800816E2D /* Debug */,

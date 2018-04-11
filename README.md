@@ -1,9 +1,19 @@
-# XYPhotoBrowser
+<h1 align="center">XYPhotoBrowser</h1>
 
-[![CI Status](http://img.shields.io/travis/zhipingyang/XYPhotoBrowser.svg?style=flat)](https://travis-ci.org/zhipingyang/XYPhotoBrowser)
-[![Version](https://img.shields.io/cocoapods/v/XYPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/XYPhotoBrowser)
-[![License](https://img.shields.io/cocoapods/l/XYPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/XYPhotoBrowser)
-[![Platform](https://img.shields.io/cocoapods/p/XYPhotoBrowser.svg?style=flat)](http://cocoapods.org/pods/XYPhotoBrowser)
+<p align="center">
+	<a href="https://travis-ci.org/ZhipingYang/XYPhotoBrowser">
+		<image alt="CI Status" src="http://img.shields.io/travis/ZhipingYang/XYPhotoBrowser.svg?style=flat">
+	</a>
+	<a href="http://cocoapods.org/pods/XYPhotoBrowser">
+		<image alt="Version" src="https://img.shields.io/cocoapods/v/XYPhotoBrowser.svg?style=flat">
+	</a>
+	<a href="http://cocoapods.org/pods/XYPhotoBrowser">
+		<image alt="License" src="https://img.shields.io/cocoapods/l/XYPhotoBrowser.svg?style=flat">
+	</a>
+	<a href="http://cocoapods.org/pods/XYPhotoBrowser">
+		<image alt="Platform" src="https://img.shields.io/cocoapods/p/XYPhotoBrowser.svg?style=flat">
+	</a>
+</p>
 
 
 ## Example

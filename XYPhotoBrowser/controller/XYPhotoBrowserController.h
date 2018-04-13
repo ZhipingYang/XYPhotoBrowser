@@ -8,6 +8,7 @@
 
 #import "XYPhotoBrowserViewResize.h"
 #import "XYPhotoBrowserContentView.h"
+#import "XYPhotoBrowserChildController.h"
 
 @import UIKit;
 @class XYPBControllerOverlayView;
@@ -20,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //通知名字
 FOUNDATION_EXPORT const struct XYPhotoBrowserControllerNotification {
-	__unsafe_unretained NSString *didNavigateToPhoto; // 跳转到不同的photo
+	__unsafe_unretained NSString *didNavigateToPhotoPage; // 跳转到不同的photo
 	__unsafe_unretained NSString *willDismiss;	// 即将消失，包括手势消失
 	__unsafe_unretained NSString *didDismiss;	// 已经消失
 	
@@ -126,7 +127,7 @@ FOUNDATION_EXPORT const struct XYPhotoBrowserControllerNotification {
 /**
  滑动展示photo时回调
  */
-- (void)photosViewController:(XYPhotoBrowserController *)photosViewController didNavigateToPhoto:(id <XYPhotoBrowserItem>)photo atIndex:(NSUInteger)photoIndex;
+- (void)photosViewController:(XYPhotoBrowserController *)photosViewController didNavigateToPhotoPage:(XYPhotoBrowserChildController *)photoPage atIndex:(NSUInteger)photoIndex;
 
 - (void)photosViewControllerWillDismiss:(XYPhotoBrowserController *)photosViewController;
 - (void)photosViewControllerDidDismiss:(XYPhotoBrowserController *)photosViewController;

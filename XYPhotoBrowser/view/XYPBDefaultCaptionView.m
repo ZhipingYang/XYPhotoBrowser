@@ -45,8 +45,8 @@ static const CGFloat XYPBDefaultCaptionViewVerticalMargin = 7.0;
 	[self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 		if ([obj isKindOfClass:NSClassFromString(@"_UITextContainerView")]) {
 			obj.backgroundColor = ckph_alphaBlack;
-			[obj.layer addSublayer:_bottomLayer];
-			_bottomLayer.frame = CGRectMake(0, obj.xypb_bottom, obj.xypb_width, 200);
+			[obj.layer addSublayer:self->_bottomLayer];
+			self->_bottomLayer.frame = CGRectMake(0, obj.xypb_bottom, obj.xypb_width, 200);
 		}
 	}];
 	

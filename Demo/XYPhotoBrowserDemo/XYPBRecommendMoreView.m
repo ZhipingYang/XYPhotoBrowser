@@ -96,8 +96,8 @@
 	[array enumerateObjectsUsingBlock:^(id<XYPhotoBrowserItem>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 		XYPBRecommendMoreViewButton *button = [XYPBRecommendMoreViewButton buttonWithPhoto:obj];
 		[button addTarget:self action:@selector(itemClick:) forControlEvents:UIControlEventTouchUpInside];
-		[_contentView addSubview:button];
-		[_buttons addObject:button];
+		[self->_contentView addSubview:button];
+		[self->_buttons addObject:button];
 	}];
 }
 

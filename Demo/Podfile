@@ -4,9 +4,10 @@ platform :ios, ‘8.0’
 
 target 'XYPhotoBrowserDemo' do
 
-  pod 'FLAnimatedImage'
-  pod 'MBProgressHUD'
+#  pod 'FLAnimatedImage'
+#  pod 'SDWebImage/GIF'
   pod 'SDWebImage'
+  pod 'MBProgressHUD'
   pod 'UUKeyboardInputView'
   
 end

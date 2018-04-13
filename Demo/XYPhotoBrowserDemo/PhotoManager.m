@@ -14,9 +14,13 @@
 #import "CustomView.h"
 
 #import <UIImage+GIF.h>
-#import <SDWebImage/SDWebImageManager.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIView+WebCache.h>
 #import <UUKeyboardInputView.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+//#import <FLAnimatedImageView+WebCache.h>
+#import <SDWebImageCodersManager.h>
+#import <SDWebImageGIFCoder.h>
 
 @interface PhotoManager()<XYPhotoBrowserControllerDelegate, PhotoDataSourceDelegate, XYPBDefaultFunctionViewDelegate, XYPBRecommendMoreViewDelegate>
 
@@ -36,6 +40,7 @@
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		manager = [[self alloc] init];
+		[[SDWebImageCodersManager sharedInstance] addCoder:[SDWebImageGIFCoder sharedCoder]];
 	});
 	return manager;
 }
@@ -69,25 +74,19 @@
 
 #pragma mark - XYPhotoBrowserControllerDelegate
 
-- (void)photosViewController:(XYPhotoBrowserController *)photosViewController didNavigateToPhoto:(id <XYPhotoBrowserItem>)photo atIndex:(NSUInteger)photoIndex
+- (void)photosViewController:(XYPhotoBrowserController *)photosViewController didNavigateToPhotoPage:(nonnull XYPhotoBrowserChildController *)photoPage atIndex:(NSUInteger)photoIndex
 {
 	[(PhotoItem *)[_photoDataSource photoAtIndex:photoIndex+1] loadImageIfNeed];
 	[(PhotoItem *)[_photoDataSource photoAtIndex:photoIndex-1] loadImageIfNeed];
-	PhotoItem *photoItem = photo;
-	if (photoItem.imageUrl.length>0 && photo.imageData==nil && photo.image==nil) {
-		[[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:photoItem.imageUrl] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-			if ([image isGIF]) {
-				[photoItem updateImageData:data];
-			} else if (image) {
-				[photoItem updateImage:image];
-			}
+	PhotoItem *photoItem = photoPage.photo;
+	
+	if (photoItem.type == CKWebPhotoTypeDefault && (!photoItem.image && !photoItem.imageData)) {
+//		[photoPage.scalingImageView.imageView sd_setImageWithURL:[NSURL URLWithString:photoItem.imageUrl] placeholderImage:photoItem.placeholderImage];
+		photoPage.scalingImageView.imageView.sd_imageTransition = SDWebImageTransition.fadeTransition;
+//		[photoPage.scalingImageView.imageView sd_setImageWithURL:[NSURL URLWithString:photoItem.imageUrl] placeholderImage:photoItem.placeholderImage];
+		[photoPage.scalingImageView.imageView sd_setImageWithURL:[NSURL URLWithString:photoItem.imageUrl] placeholderImage:photoItem.placeholderImage completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
 			[photosViewController updatePhotoAtIndex:photoIndex];
 		}];
-	} else {
-		[photosViewController updatePhotoAtIndex:photoIndex];
-	}
-	if (photoItem.type != CKWebPhotoTypeDefault && photosViewController.overlayView.hidden == YES) {
-		
 	}
 }
 

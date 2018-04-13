@@ -9,7 +9,6 @@
 #import "XYPhotoBrowserController.h"
 #import "XYPhotoBrowserDataSource.h"
 #import "XYPBArrayDataSource.h"
-#import "XYPhotoBrowserChildController.h"
 #import "XYPhotoBrowserTransitionController.h"
 #import "XYPBScalingImageView.h"
 #import "XYPhotoBrowserItem.h"
@@ -22,7 +21,7 @@
 #endif
 
 const struct XYPhotoBrowserControllerNotification XYPhotoBrowserControllerNotification = {
-	.didNavigateToPhoto = @"XYPhotoBrowserControllerNotification.didNavigateToPhoto",
+	.didNavigateToPhotoPage = @"XYPhotoBrowserControllerNotification.didNavigateToPhotoPage",
 	.willDismiss = @"XYPhotoBrowserControllerNotification.willDismiss",
 	.didDismiss = @"XYPhotoBrowserControllerNotification.didDismiss",
 };
@@ -376,8 +375,8 @@ static const UIEdgeInsets XYPhotoBrowserControllerCloseButtonImageInsets = {3, 0
     [self setCurrentlyDisplayedViewController:photoViewController animated:animated];
     [self updateOverlayInformation];
 	
-	if ([self.delegate respondsToSelector:@selector(photosViewController:didNavigateToPhoto:atIndex:)]) {
-		[self.delegate photosViewController:self didNavigateToPhoto:photo atIndex:[self.dataSource indexOfPhoto:photo]];
+	if ([self.delegate respondsToSelector:@selector(photosViewController:didNavigateToPhotoPage:atIndex:)]) {
+		[self.delegate photosViewController:self didNavigateToPhotoPage:photoViewController atIndex:[self.dataSource indexOfPhoto:photo]];
 	}
 }
 
@@ -573,12 +572,12 @@ static const UIEdgeInsets XYPhotoBrowserControllerCloseButtonImageInsets = {3, 0
     return nil;
 }
 
-- (void)didNavigateToPhoto:(id <XYPhotoBrowserItem>)photo {
-    if ([self.delegate respondsToSelector:@selector(photosViewController:didNavigateToPhoto:atIndex:)]) {
-        [self.delegate photosViewController:self didNavigateToPhoto:photo atIndex:[self.dataSource indexOfPhoto:photo]];
+- (void)didNavigateToPhotoPage:(XYPhotoBrowserChildController *)photoPage {
+    if ([self.delegate respondsToSelector:@selector(photosViewController:didNavigateToPhotoPage:atIndex:)]) {
+        [self.delegate photosViewController:self didNavigateToPhotoPage:photoPage atIndex:[self.dataSource indexOfPhoto:photoPage.photo]];
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:XYPhotoBrowserControllerNotification.didNavigateToPhoto object:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:XYPhotoBrowserControllerNotification.didNavigateToPhotoPage object:self];
 }
 
 - (id <XYPhotoBrowserItem>)currentlyDisplayedPhoto {
@@ -648,7 +647,7 @@ static const UIEdgeInsets XYPhotoBrowserControllerCloseButtonImageInsets = {3, 0
 		[self updateOverlayInformation];
 		
 		UIViewController <XYPhotoBrowserContainer> *photoViewController = pageViewController.viewControllers.firstObject;
-		[self didNavigateToPhoto:photoViewController.photo];
+		[self didNavigateToPhotoPage:photoViewController];
     }
 }
 

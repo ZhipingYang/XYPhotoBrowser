@@ -77,7 +77,7 @@
 
 - (BOOL)hasData
 {
-	if (_type == CKWebPhotoTypeAd) {
+	if (_type != CKWebPhotoTypeDefault) {
 		return YES;
 	}
 	return _image || _imageData;
@@ -85,48 +85,44 @@
 
 - (UIImage *)image
 {
-	if (_image) {
-		return _image;
-	} else if (self.imageUrl.length>0) {
-		[[SDWebImageManager sharedManager] diskImageExistsForURL:[NSURL URLWithString:self.imageUrl] completion:^(BOOL isInCache) {
-			if (isInCache) {
-				[[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:self.imageUrl] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-					_image = image;
-					_imageData = data;
-				}];
-			}
-		}];
-	}
+//	if (_image) {
+//		return _image;
+//	} else if (self.imageUrl.length>0) {
+//		[[SDWebImageManager sharedManager] diskImageExistsForURL:[NSURL URLWithString:self.imageUrl] completion:^(BOOL isInCache) {
+//			if (isInCache) {
+//				[[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:self.imageUrl] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+//					self->_image = image;
+//					self->_imageData = data;
+//				}];
+//			}
+//		}];
+//	}
 	return _image;
 }
 
 - (NSData *)imageData
 {
-	if (_imageData) {
-		return _imageData;
-	} else if ([self.imageUrl.lowercaseString hasSuffix:@".gif"]) {
-		[[SDWebImageManager sharedManager] diskImageExistsForURL:[NSURL URLWithString:self.imageUrl] completion:^(BOOL isInCache) {
-			if (isInCache) {
-				[[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:self.imageUrl] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
-					_image = image;
-					_imageData = data;
-				}];
-			}
-		}];
-	}
+//	if (_imageData) {
+//		return _imageData;
+//	} else if ([self.imageUrl.lowercaseString hasSuffix:@".gif"]) {
+//		[[SDWebImageManager sharedManager] diskImageExistsForURL:[NSURL URLWithString:self.imageUrl] completion:^(BOOL isInCache) {
+//			if (isInCache) {
+//				[[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:self.imageUrl] options:SDWebImageRetryFailed progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+//					self->_image = image;
+//					self->_imageData = data;
+//				}];
+//			}
+//		}];
+//	}
 	return _imageData;
 }
 
 - (NSArray<id<XYPhotoBrowserItem>> *)morePhotos
 {
 	NSMutableArray *arr = @[].mutableCopy;
-	NSArray *imageUrls = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511351146777&di=12e59a2a96a61038aa464a9e510faf88&imgtype=0&src=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2013%2F265%2FP0F100HDE0X4.jpg",
-						   @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511351187986&di=150e71c728433cde42a50b7acf069a5a&imgtype=jpg&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D170386196%2C2507667277%26fm%3D214%26gp%3D0.jpg",
-						   @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511351146777&di=fe861208aa1dd0bd484b1ccd4daa6a0c&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_120101%2F1201012028ecbe98d8e891c59b.jpg",
-						   @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511412345966&di=b3410eac11fd4b5065761c791fa56258&imgtype=0&src=http%3A%2F%2Fp0.ifengimg.com%2Fpmop%2F2017%2F0829%2F7AB46C8FC26A3D763BE3755A45D76E83FED98296_size720_w500_h280.gif",
-						   @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511351146777&di=b058f68f2bc0d5c6cd7487f831b18ae9&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F6%2F53e19df48f87e.jpg",
-						   @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1511343873817&di=4cf241191e662dcad0dc23654d52cc15&imgtype=0&src=http%3A%2F%2Fimg.ycwb.com%2Fnews%2Fattachement%2Fgif%2Fsite2%2F20160921%2F507b9d762551194c19be5f.gif",
-						   @"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2114763443,721394211&fm=27&gp=0.jpg"];
+	NSArray *imageUrls = @[@"https://user-images.githubusercontent.com/9360037/38593077-2405b334-3d72-11e8-8845-8bc6626ecdc2.gif",
+						   @"https://user-images.githubusercontent.com/9360037/38592861-0f0fb584-3d71-11e8-884b-b07510f74ec4.gif",
+						   @"https://user-images.githubusercontent.com/9360037/38592860-0eaec3b4-3d71-11e8-9bcf-7496b8ead6e6.gif"];
 	
 	[imageUrls enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL * _Nonnull stop) {
 		[arr addObject:[[PhotoItem alloc] initWithImageUrl:obj]];

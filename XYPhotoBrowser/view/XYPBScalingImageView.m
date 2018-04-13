@@ -65,6 +65,9 @@
 
 #ifdef ANIMATED_GIF_SUPPORT
     self.imageView = [[FLAnimatedImageView alloc] initWithImage:imageToUse];
+	if (photo.imageData) {
+		self.imageView.animatedImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:photo.imageData];
+	}
 #else
     self.imageView = [[UIImageView alloc] initWithImage:imageToUse];
 #endif
